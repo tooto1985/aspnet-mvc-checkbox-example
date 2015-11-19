@@ -1,0 +1,15 @@
+﻿@using System.Web.UI.WebControls
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+@using (@Html.BeginForm("Send", "Users", FormMethod.Post))
+{
+    for (var i = 0; i < 5; i++)
+    {
+        @Html.CheckBox("qoo[" + i + "]", false, new {Value = "data"+i});
+        <label for="qoo[@i]"><text>選取</text>@i</label>
+        <br/>
+    }
+    <input type="submit" />
+}
